@@ -25,10 +25,11 @@ class InputThread(Trd):
 
         # If user enters an empty string, all threads will be stopped.
         while not self.is_stopped.is_set():
-            user_input = input('Enter your number value(s).\nTo stop, enter empty string.\n')
+            user_input = input(
+                'Enter your number value(s).\nTo stop, enter empty string.\n')
 
             if user_input == '':
-                # Trying to access shared data safely.
+                # Trying to access shared list safely.
                 # If self.lock is acquired == True, waiting for releasing.
                 with self.lock:
                     # Then, printing sorted data and stopping.
@@ -56,7 +57,11 @@ class SortThread(Trd):
         self.lock = lock
 
     def run(self):
+        global LST
+
+        # For every 30 seconds...
         while not self.is_it_time_to_sort.wait(30):
+            # ...lock global shared list, sort all data in it, then release.
             self.lock.acquire()
             LST.sort()
             self.lock.release()
@@ -70,4 +75,3 @@ class SortThread(Trd):
 
 if __name__ == '__main__':
     InputThread().start()
-
