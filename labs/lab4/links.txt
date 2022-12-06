@@ -1,0 +1,10 @@
+https://debian.volia.net/debian/doc/bug-log-access.txt
+https://debian.volia.net/debian/doc/bug-log-mailserver.txt
+https://debian.volia.net/debian/doc/bug-mailserver-refcard.txt
+https://debian.volia.net/debian/doc/bug-maint-info.txt
+https://debian.volia.net/debian/doc/bug-maint-mailcontrol.txt
+https://debian.volia.net/debian/doc/bug-reporting.txt
+https://debian.volia.net/debian/doc/constitution.txt
+https://debian.volia.net/debian/doc/mailing-lists.txt
+https://debian.volia.net/debian/doc/social-contract.txt
+https://debian.volia.net/debian/doc/source-unpack.txt
