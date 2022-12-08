@@ -55,5 +55,7 @@ def scrape():
             f'{DIR}/output/articles-{saved_at}.json', 'w') as out_file:
             json_dump(articles, out_file, indent=4)
 
+        return saved_at
+
     except Exception as e:
         print(f'Exception:\n{e}')
