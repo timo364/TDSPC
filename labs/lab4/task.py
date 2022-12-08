@@ -11,6 +11,10 @@ DIR = Path(__file__).parent
 
 
 def download_files_synchronously():
+    '''
+    Creates `out_sync` directory, clears it and reads `links.txt`.
+    Separately gets content from every link and saves it to files respectively.
+    '''
     out_dir = DIR.joinpath('out_sync')
     out_dir.mkdir(parents=True, exist_ok=True)
     [f.unlink() for f in out_dir.iterdir()]
@@ -28,6 +32,10 @@ def download_files_synchronously():
 
 
 async def download_files_asynchronously():
+    '''
+    Creates `out_async` directory, clears it and asynchronously reads `links.txt`.
+    Asynchronously gets content from every link and saves it to files respectively.
+    '''
     out_dir = DIR.joinpath('out_async')
     out_dir.mkdir(parents=True, exist_ok=True)
     [f.unlink() for f in out_dir.iterdir()]
@@ -46,6 +54,7 @@ async def download_files_asynchronously():
 
 
 if __name__ == '__main__':
+    # Comparing execution time of both algorithms.
     sync_time = perf_counter()
     download_files_synchronously()
     print(f'Synchronous execution time: {perf_counter() - sync_time:0.2f} msecs.')
