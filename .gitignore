@@ -2,3 +2,4 @@ pycon-concurrency-tutorial-2020/
 lectures/
 *.pdf
 Pipfile
+__pycache__
